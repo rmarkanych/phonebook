@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
-//import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 import Phonebook from 'pages/Phonebook/Phonebook';
 
@@ -11,9 +11,12 @@ const App = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
   return (
-    <>
-      <Phonebook />
-    </>
+    <Routes>
+      <Route path="/" element={<p>home</p>}>
+        <Route path="phonebook" element={<Phonebook />}></Route>
+      </Route>
+      <Route path="*" element={<Navigate to="/" replace />}></Route>
+    </Routes>
   );
 };
 
