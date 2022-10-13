@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchContacts } from 'redux/operations';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import HomePage from 'pages/HomePage/HomePage';
@@ -9,6 +9,7 @@ import Registration from 'pages/Registration/Registration';
 import Layout from 'components/Layout/Layout';
 
 const App = () => {
+  const [isAuth, setIsAuth] = useState(false);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchContacts());
@@ -16,11 +17,16 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
-        <Route path="phonebook" element={<Phonebook />} />
-        <Route path="login" element={<LogIn />} />
-        <Route path="register" element={<Registration />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route>
+          <Route index element={<HomePage />} />
+          <Route path="phonebook" element={<Phonebook />} />
+          <Route path="*" element={<Navigate to="/login" replace />} />
+        </Route>
+
+        <Route>
+          <Route path="login" element={<LogIn />} />
+          <Route path="register" element={<Registration />} />
+        </Route>
       </Route>
     </Routes>
   );
