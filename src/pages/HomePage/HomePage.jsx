@@ -1,5 +1,11 @@
+import { FaPhoneSquare } from 'react-icons/fa';
 const HomePage = () => {
-  return <p>That is my phonebook app 🥷🏻</p>;
+  return (
+    <p style={{ display: 'flex', alignItems: 'center' }}>
+      Welcome to my phonebook app
+      <FaPhoneSquare style={{ marginLeft: '5px', color: 'green' }} />
+    </p>
+  );
 };
 
 export default HomePage;

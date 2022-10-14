@@ -6,7 +6,7 @@ import HomePage from 'pages/HomePage/HomePage';
 import Phonebook from 'pages/Phonebook/Phonebook';
 import LogIn from 'pages/LogIn/Login';
 import Registration from 'pages/Registration/Registration';
-import Layout from 'components/Layout/Layout';
+import Navigation from 'components/Navigation/Navigation';
 
 const App = () => {
   const [isAuth, setIsAuth] = useState(false);
@@ -15,20 +15,23 @@ const App = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route>
-          <Route index element={<HomePage />} />
-          <Route path="phonebook" element={<Phonebook />} />
-          <Route path="*" element={<Navigate to="/login" replace />} />
-        </Route>
-
-        <Route>
-          <Route path="login" element={<LogIn />} />
-          <Route path="register" element={<Registration />} />
-        </Route>
-      </Route>
-    </Routes>
+    <>
+      <Navigation />
+      {!isAuth ? (
+        <Routes>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/register" element={<Registration />} />
+          <Route path="*" element={<Navigate to="login" />} />
+        </Routes>
+      ) : (
+        <Routes>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/contacts" element={<Phonebook />} />
+          <Route path="*" element={<Navigate to="contacts" />} />
+        </Routes>
+      )}
+    </>
   );
 };
 
