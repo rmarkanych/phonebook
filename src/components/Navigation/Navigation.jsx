@@ -1,16 +1,30 @@
-import { NavLink } from 'react-router-dom';
+//import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
-import s from './Navigation.module.css';
+import { Nav, NavItem } from './Navigation.styled';
 
 const Navigation = () => {
+  const isAuth = useSelector(state => state.auth.isAuth);
   return (
     <>
-      <nav className={s.nav}>
-        <NavLink to="/home">Home</NavLink>
-        <NavLink to="/contacts"> Phonebook </NavLink>
-        <NavLink to="/register"> Registration </NavLink>
-        <NavLink to="/login"> LogIn </NavLink>
-      </nav>
+      <Nav>
+        {isAuth ? (
+          <>
+            <NavItem to="/" end>
+              Home
+            </NavItem>
+            <NavItem to="/contacts"> Phonebook </NavItem>
+          </>
+        ) : (
+          <>
+            <NavItem to="/" end>
+              Home
+            </NavItem>
+            <NavItem to="/register"> Registration </NavItem>
+            <NavItem to="/login"> Log In </NavItem>
+          </>
+        )}
+      </Nav>
       <Outlet />
     </>
   );

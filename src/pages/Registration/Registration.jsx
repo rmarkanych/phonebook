@@ -1,3 +1,9 @@
+import {
+  RegisterForm,
+  RegisterLabel,
+  RegisterInput,
+  RegisterBtn,
+} from './Registration.styled';
 const Registration = () => {
   const handleSubmit = e => {
     e.preventDefault();
@@ -6,23 +12,21 @@ const Registration = () => {
     form.reset();
   };
   return (
-    <>
-      <form onSubmit={handleSubmit} autoComplete="off">
-        <label>
-          Username
-          <input type="text" name="name" />
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" />
-        </label>
-        <label>
-          Password
-          <input type="password" name="password" />
-        </label>
-        <button type="submit">Register</button>
-      </form>
-    </>
+    <RegisterForm onSubmit={handleSubmit}>
+      <RegisterLabel>
+        Username
+        <RegisterInput type="text" name="name" autoComplete="off" />
+      </RegisterLabel>
+      <RegisterLabel>
+        Email
+        <RegisterInput type="email" name="email" autoComplete="off" />
+      </RegisterLabel>
+      <RegisterLabel>
+        Password
+        <RegisterInput type="password" name="password" autoComplete="off" />
+      </RegisterLabel>
+      <RegisterBtn type="submit">Register</RegisterBtn>
+    </RegisterForm>
   );
 };
 

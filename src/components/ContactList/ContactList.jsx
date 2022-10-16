@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteNewContact } from 'redux/operations';
 import Title from 'components/Title/Title';
-import s from '../ContactList/ContactList.module.css';
+import { FaTrashAlt } from 'react-icons/fa';
+import { ListOfContact, ItemOfContact, RemoveBtn } from './ContactList.styled';
 
 const ContactList = () => {
   const contacts = useSelector(state => state.contacts.items);
@@ -15,27 +16,30 @@ const ContactList = () => {
   );
 
   return (
-    <div className={s.wrapper}>
+    <div>
       {filteredArray.length < 1 ? (
         <Title title="Add new contact to your list ⬆" />
       ) : (
-        <ul className={s.list}>
+        <ListOfContact>
           {filteredArray.map(({ id, name, number }) => {
             return (
-              <li className={s.item} key={id}>
+              <ItemOfContact key={id}>
                 <p>
                   {name}: {number}
                 </p>
-                <button
-                  className={s.btn}
-                  onClick={() => dispatch(deleteNewContact(id))}
-                >
-                  Delete 🗑
-                </button>
-              </li>
+                <RemoveBtn onClick={() => dispatch(deleteNewContact(id))}>
+                  Delete{' '}
+                  <FaTrashAlt
+                    style={{
+                      marginLeft: '5px',
+                      color: 'black',
+                    }}
+                  />
+                </RemoveBtn>
+              </ItemOfContact>
             );
           })}
-        </ul>
+        </ListOfContact>
       )}
     </div>
   );

@@ -1,3 +1,5 @@
+import { LoginForm, LoginLabel, LoginBtn, LoginInput } from './Login.styled';
+
 const LogIn = () => {
   const handleSubmit = e => {
     e.preventDefault();
@@ -5,19 +7,17 @@ const LogIn = () => {
     form.reset();
   };
   return (
-    <>
-      <form onSubmit={handleSubmit} autoComplete="off">
-        <label>
-          Email
-          <input type="email" name="email" />
-        </label>
-        <label>
-          Password
-          <input type="password" name="password" />
-        </label>
-        <button type="submit">Log In</button>
-      </form>
-    </>
+    <LoginForm onSubmit={handleSubmit}>
+      <LoginLabel>
+        Email
+        <LoginInput type="email" name="email" autoComplete="off" />
+      </LoginLabel>
+      <LoginLabel>
+        Password
+        <LoginInput type="password" name="password" autoComplete="off" />
+      </LoginLabel>
+      <LoginBtn type="submit">Log In</LoginBtn>
+    </LoginForm>
   );
 };
 

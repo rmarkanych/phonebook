@@ -2,9 +2,15 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addNewContact } from 'redux/operations';
 import { nanoid } from 'nanoid';
+import { FaPencilAlt } from 'react-icons/fa';
 import Title from 'components/Title/Title';
-import s from '../ContactForm/ContactForm.module.css';
 
+import {
+  ContactOfForm,
+  AddContactBtn,
+  ContactOfLabel,
+  ContactOfInput,
+} from './ContactForm.styled';
 const ContactForm = () => {
   const contacts = useSelector(state => state.contacts.items);
   const dispatch = useDispatch();
@@ -48,15 +54,15 @@ const ContactForm = () => {
   };
 
   return (
-    <form
-      className={s.form}
+    <ContactOfForm
       onSubmit={e => {
         handlerSubmit(e);
       }}
     >
       <Title title="Name" />
-      <label>
-        <input
+      <ContactOfLabel>
+        <ContactOfInput
+          autoComplete="off"
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -66,10 +72,11 @@ const ContactForm = () => {
             inputNameChange(e);
           }}
         />
-      </label>
+      </ContactOfLabel>
       <Title title="Number" />
-      <label>
-        <input
+      <ContactOfLabel>
+        <ContactOfInput
+          autoComplete="off"
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -79,11 +86,17 @@ const ContactForm = () => {
             inputNumberChange(e);
           }}
         />
-      </label>
-      <button className={s.btn} type="submit">
-        Add contact ✏️
-      </button>
-    </form>
+      </ContactOfLabel>
+      <AddContactBtn type="submit">
+        Add contact{' '}
+        <FaPencilAlt
+          style={{
+            marginLeft: '5px',
+            color: 'black',
+          }}
+        />
+      </AddContactBtn>
+    </ContactOfForm>
   );
 };
 
