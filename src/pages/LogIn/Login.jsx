@@ -17,17 +17,19 @@ const LogIn = () => {
   };
 
   return (
-    <LoginForm onSubmit={handleSubmit}>
-      <LoginLabel>
-        Email
-        <LoginInput type="email" name="email" autoComplete="off" />
-      </LoginLabel>
-      <LoginLabel>
-        Password
-        <LoginInput type="password" name="password" autoComplete="off" />
-      </LoginLabel>
-      <LoginBtn type="submit">Log In</LoginBtn>
-    </LoginForm>
+    <div style={{ paddingTop: '30px' }}>
+      <LoginForm onSubmit={handleSubmit}>
+        <LoginLabel>
+          Email
+          <LoginInput type="email" name="email" autoComplete="off" />
+        </LoginLabel>
+        <LoginLabel>
+          Password
+          <LoginInput type="password" name="password" autoComplete="off" />
+        </LoginLabel>
+        <LoginBtn type="submit">Log In</LoginBtn>
+      </LoginForm>
+    </div>
   );
 };
 

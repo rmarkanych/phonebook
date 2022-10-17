@@ -22,21 +22,23 @@ const Registration = () => {
   };
 
   return (
-    <RegisterForm onSubmit={handleSubmit}>
-      <RegisterLabel>
-        Username
-        <RegisterInput type="text" name="name" autoComplete="off" />
-      </RegisterLabel>
-      <RegisterLabel>
-        Email
-        <RegisterInput type="email" name="email" autoComplete="off" />
-      </RegisterLabel>
-      <RegisterLabel>
-        Password
-        <RegisterInput type="password" name="password" autoComplete="off" />
-      </RegisterLabel>
-      <RegisterBtn type="submit">Register</RegisterBtn>
-    </RegisterForm>
+    <div style={{ paddingTop: '30px' }}>
+      <RegisterForm onSubmit={handleSubmit}>
+        <RegisterLabel>
+          Username
+          <RegisterInput type="text" name="name" autoComplete="off" />
+        </RegisterLabel>
+        <RegisterLabel>
+          Email
+          <RegisterInput type="email" name="email" autoComplete="off" />
+        </RegisterLabel>
+        <RegisterLabel>
+          Password
+          <RegisterInput type="password" name="password" autoComplete="off" />
+        </RegisterLabel>
+        <RegisterBtn type="submit">Register</RegisterBtn>
+      </RegisterForm>
+    </div>
   );
 };
 

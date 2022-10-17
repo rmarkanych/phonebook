@@ -19,7 +19,7 @@ const Navigation = () => {
           </>
         ) : (
           <>
-            <div>
+            <div style={{ display: 'flex', gap: '20px' }}>
               <NavItem to="/" end>
                 Home
               </NavItem>

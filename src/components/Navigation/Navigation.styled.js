@@ -5,6 +5,7 @@ export const Nav = styled.nav`
   width: 100%;
   justify-content: space-around;
   padding: 20px;
+  border-bottom: 1px solid gray;
 `;
 
 export const NavItem = styled(NavLink)`

@@ -6,7 +6,7 @@ const Phonebook = () => {
   const contacts = useSelector(state => state.contacts.items);
 
   return (
-    <div>
+    <div style={{ paddingTop: '30px' }}>
       <ContactForm />
       {contacts.length > 0 && (
         <>
