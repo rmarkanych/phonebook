@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addNewContact } from 'redux/mockapiOperations';
 import { nanoid } from 'nanoid';
 import { FaPencilAlt } from 'react-icons/fa';
-import Title from 'components/Title/Title';
+//import Title from 'components/Title/Title';
 
 import {
   ContactOfForm,

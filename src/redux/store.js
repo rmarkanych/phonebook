@@ -15,7 +15,7 @@ import filterReducer from './filterSlice';
 import authReducer from './authSlice';
 
 const authPersistConfig = {
-  key: ['auth', 'contacts', 'filter'],
+  key: 'auth',
   storage,
 };
 const persistedReducer = persistReducer(authPersistConfig, authReducer);

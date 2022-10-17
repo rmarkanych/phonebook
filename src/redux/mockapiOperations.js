@@ -6,6 +6,11 @@ axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
   async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+    axios.defaults.headers.common = {
+      Authorization: `Bearer ${persistedToken}`,
+    };
     try {
       const r = await axios.get('/contacts');
       return r.data;
@@ -31,8 +36,8 @@ export const deleteNewContact = createAsyncThunk(
   'contacts/deleteContact',
   async (id, thunkAPI) => {
     try {
-      const r = await axios.delete(`/contacts/${id}`);
-      return r.data.id;
+      await axios.delete(`/contacts/${id}`);
+      return id;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
     }

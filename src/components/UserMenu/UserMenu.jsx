@@ -13,7 +13,8 @@ export const UserMenu = () => {
   return (
     <UserWrapper>
       <UserParagrapher>
-        <UserSpan>{user.name[0].toUpperCase()}</UserSpan> {user.name}
+        <UserSpan>{user.name[0].toUpperCase()}</UserSpan>
+        {user.name}
       </UserParagrapher>
       <LogOutBtn type="button" onClick={() => dispatch(logOut())}>
         Log out
