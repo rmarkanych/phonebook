@@ -6,6 +6,7 @@ export const ListOfContact = styled.ul`
 export const ItemOfContact = styled.li`
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 export const RemoveBtn = styled.button`
   align-items: center;

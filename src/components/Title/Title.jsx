@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const Title = ({ title }) => {
   return (
     <>
-      <h3>{title}</h3>
+      <h3 style={{ display: 'flex', justifyContent: 'center' }}>{title}</h3>
     </>
   );
 };
