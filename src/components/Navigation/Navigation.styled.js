@@ -1,20 +1,10 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 export const Nav = styled.nav`
-  padding-left: 0;
-  padding-right: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
+  width: 100%;
+  justify-content: space-around;
   padding: 20px;
-  top: 0;
-  left: 0;
-  //position: sticky;
-  z-index: 1100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 export const NavItem = styled(NavLink)`
@@ -27,13 +17,13 @@ export const NavItem = styled(NavLink)`
   font-family: 'Caveat Brush';
   border: 1px solid green;
   &.active {
-    color: black;
+    color: white;
     background-color: green;
   }
   :focus-visible:not(.active),
   :hover:not(.active) {
-    color: gray;
-    color: black;
+    color: white;
+    background-color: green;
     transform: scale(1.05);
   }
 `;

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addNewContact } from 'redux/operations';
+import { addNewContact } from 'redux/mockapiOperations';
 import { nanoid } from 'nanoid';
 import { FaPencilAlt } from 'react-icons/fa';
 import Title from 'components/Title/Title';
@@ -59,8 +59,8 @@ const ContactForm = () => {
         handlerSubmit(e);
       }}
     >
-      <Title title="Name" />
       <ContactOfLabel>
+        Name
         <ContactOfInput
           autoComplete="off"
           type="text"
@@ -73,8 +73,9 @@ const ContactForm = () => {
           }}
         />
       </ContactOfLabel>
-      <Title title="Number" />
+
       <ContactOfLabel>
+        Number
         <ContactOfInput
           autoComplete="off"
           type="tel"

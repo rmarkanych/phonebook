@@ -21,5 +21,9 @@ export const RemoveBtn = styled.button`
   border: 1px solid green;
   &:hover {
     background-color: green;
+    color: white;
+    svg {
+      fill: white;
+    }
   }
 `;

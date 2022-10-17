@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchContacts, addNewContact, deleteNewContact } from './operations';
+import {
+  fetchContacts,
+  addNewContact,
+  deleteNewContact,
+} from './mockapiOperations';
 
 export const contactsSlice = createSlice({
   name: 'contacts',

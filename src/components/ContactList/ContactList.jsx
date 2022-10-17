@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteNewContact } from 'redux/operations';
+import { deleteNewContact } from 'redux/mockapiOperations';
 import Title from 'components/Title/Title';
 import { FaTrashAlt } from 'react-icons/fa';
 import { ListOfContact, ItemOfContact, RemoveBtn } from './ContactList.styled';
