@@ -5,13 +5,16 @@ import { HomeParagrapher, JokeWrapper, JokeBtn } from './HomePage.styled';
 
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
+
   const fetchPost = async () => {
     const r = await axios('https://api.chucknorris.io/jokes/random');
     setPosts(r.data);
   };
+
   useEffect(() => {
     fetchPost();
   }, []);
+
   return (
     <>
       <HomeParagrapher>
