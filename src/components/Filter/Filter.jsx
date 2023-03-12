@@ -1,20 +1,25 @@
 import { useDispatch } from 'react-redux';
 import { setFilter } from 'redux/filterSlice';
 import Title from 'components/Title/Title';
-import { FilterInput } from './Filter.styled';
+import { FilterInput, FilterWrapper, FilterForm, FilterLabel } from './Filter.styled';
+
 const Filter = () => {
+
   const dispatch = useDispatch();
 
   return (
-    <>
-      <Title title="Find contacts by name" />
-      <label>
+    <FilterWrapper>
+      <FilterForm>
+      <Title title="Find contacts by name or number" />
+      <FilterLabel>
         <FilterInput
           type="text"
           onChange={e => dispatch(setFilter(e.target.value))}
         />
-      </label>
-    </>
+      </FilterLabel>
+      </FilterForm>
+      
+    </FilterWrapper>
   );
 };
 

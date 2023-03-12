@@ -7,16 +7,16 @@ export const UserSpan = styled.span`
   width: 30px;
   height: 30px;
   border-radius: 50px;
-  background-color: green;
+  background-color: transparent;
+  border: 1px solid white;
   color: white;
   margin-right: 10px;
 `;
+
 export const UserParagrapher = styled.p`
   display: flex;
   margin-top: 0;
   margin-bottom: 0;
-  margin-right: 10px;
-
   align-content: center;
   justify-content: center;
   align-items: center;
@@ -24,26 +24,30 @@ export const UserParagrapher = styled.p`
 
 export const UserWrapper = styled.div`
   display: flex;
+  align-items: center;
 `;
+
 export const LogOutBtn = styled.button`
-  padding: 5px 15px;
-  font-size: 30px;
+display: flex;
+align-items: center;
+  padding: 5px 10px;
+  font-size: 20px;
   text-decoration: none;
-  background-color: white;
+  background-color: transparent;
   border-radius: 7px;
-  color: gray;
+  color: white;
   font-family: 'Caveat Brush';
   cursor: pointer;
-  border: 1px solid green;
+  height: 27px;
+  border: 1px solid white;
   &.active {
-    color: white;
-    background-color: green;
+    color: black;
+    background-color: white;
   }
   :focus-visible:not(.active),
   :hover:not(.active) {
-    color: white;
-    background-color: green;
-    /* color: black; */
-    transform: scale(1.05);
+    color: black;
+    background-color: white;
+   
   }
 `;

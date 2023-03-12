@@ -3,15 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addNewContact } from 'redux/mockapiOperations';
 import { nanoid } from 'nanoid';
 import { FaPencilAlt } from 'react-icons/fa';
-//import Title from 'components/Title/Title';
-
 import {
   ContactOfForm,
   AddContactBtn,
   ContactOfLabel,
   ContactOfInput,
 } from './ContactForm.styled';
+
 const ContactForm = () => {
+  
   const contacts = useSelector(state => state.contacts.items);
   const dispatch = useDispatch();
 

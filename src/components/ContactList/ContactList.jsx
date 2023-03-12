@@ -2,9 +2,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteNewContact } from 'redux/mockapiOperations';
 import Title from 'components/Title/Title';
 import { FaTrashAlt } from 'react-icons/fa';
-import { ListOfContact, ItemOfContact, RemoveBtn } from './ContactList.styled';
+import { ListOfContact, ItemOfContact, RemoveBtn, ContactData } from './ContactList.styled';
 
 const ContactList = () => {
+
   const contacts = useSelector(state => state.contacts.items);
   const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();
@@ -24,15 +25,14 @@ const ContactList = () => {
           {filteredArray.map(({ id, name, number }) => {
             return (
               <ItemOfContact key={id}>
-                <p>
-                  {name}: {number}
-                </p>
+                <ContactData>
+                  {name[0].toUpperCase() + name.slice(1)}: {number}
+                </ContactData>
                 <RemoveBtn onClick={() => dispatch(deleteNewContact(id))}>
                   Delete{' '}
                   <FaTrashAlt
                     style={{
-                      marginLeft: '5px',
-                      color: 'black',
+                      marginLeft: '5px'
                     }}
                   />
                 </RemoveBtn>

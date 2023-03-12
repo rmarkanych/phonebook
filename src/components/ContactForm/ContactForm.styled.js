@@ -1,19 +1,26 @@
 import styled from 'styled-components';
+
 export const ContactOfForm = styled.form`
+
   display: flex;
   flex-direction: column;
-  width: 400px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 400px;
   border: 1px solid white;
-  background-color: green;
-  padding: 15px;
   border-radius: 5px;
+  padding: 15px;
 `;
+
 export const ContactOfLabel = styled.label`
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
   color: white;
 `;
+
 export const ContactOfInput = styled.input`
   display: inline-block;
   font-size: 20px;
@@ -22,15 +29,16 @@ export const ContactOfInput = styled.input`
   outline: none;
   padding-left: 10px;
   padding-right: 10px;
-  color: green;
+  color: #1c1f24;
   &::placeholder {
     font-size: 18px;
   }
   &::selection {
     color: white;
-    background: green;
+    background: #1c1f24;
   }
 `;
+
 export const AddContactBtn = styled.button`
   align-items: center;
   display: flex;
@@ -38,20 +46,21 @@ export const AddContactBtn = styled.button`
   padding: 5px 10px;
   font-size: 15px;
   text-decoration: none;
-  background-color: white;
+  background-color: transparent;
   border-radius: 7px;
   justify-content: center;
-
   margin: 0 auto;
-  color: black;
+  color: white;
   cursor: pointer;
-  border: 1px solid green;
+  border: 1px solid white;
+  & svg {
+    fill: white
+  }
   &:hover {
-    background-color: green;
-    color: white;
-    border: 1px solid white;
+    background-color: white;
+    color: black;
     svg {
-      fill: white;
+      fill: black;
     }
   }
 `;

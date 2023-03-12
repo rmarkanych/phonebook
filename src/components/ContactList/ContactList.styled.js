@@ -1,13 +1,20 @@
 import styled from 'styled-components';
+
 export const ListOfContact = styled.ul`
   list-style: none;
   padding: 0;
 `;
+
 export const ItemOfContact = styled.li`
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
 `;
+
+export const ContactData = styled.p`
+color: white
+`
+
 export const RemoveBtn = styled.button`
   align-items: center;
   display: flex;
@@ -15,16 +22,19 @@ export const RemoveBtn = styled.button`
   padding: 5px 10px;
   font-size: 15px;
   text-decoration: none;
-  background-color: white;
+  background-color: transparent;
   border-radius: 7px;
-  color: black;
+  color: white;
   cursor: pointer;
-  border: 1px solid green;
-  &:hover {
-    background-color: green;
-    color: white;
-    svg {
+  border: 1px solid white;
+  svg {
       fill: white;
+    }
+  &:hover {
+    background-color: white;
+    color: black;
+    svg {
+      fill: black;
     }
   }
 `;

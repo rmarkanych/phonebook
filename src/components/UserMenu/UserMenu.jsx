@@ -6,7 +6,9 @@ import {
   UserWrapper,
   LogOutBtn,
 } from './UserMenu.styled';
+
 export const UserMenu = () => {
+  
   const dispatch = useDispatch();
   const user = useSelector(state => state.auth.user);
 

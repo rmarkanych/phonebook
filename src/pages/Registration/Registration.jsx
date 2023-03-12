@@ -5,12 +5,17 @@ import {
   RegisterLabel,
   RegisterInput,
   RegisterBtn,
+  FormWrapper
 } from './Registration.styled';
+
 const Registration = () => {
+
   const dispatch = useDispatch();
+
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
+
     dispatch(
       register({
         name: form.elements.name.value,
@@ -22,23 +27,23 @@ const Registration = () => {
   };
 
   return (
-    <div style={{ paddingTop: '30px' }}>
+    <FormWrapper>
       <RegisterForm onSubmit={handleSubmit}>
         <RegisterLabel>
           Username
-          <RegisterInput type="text" name="name" autoComplete="off" />
+          <RegisterInput type="text" name="name" autoComplete="off" required />
         </RegisterLabel>
         <RegisterLabel>
           Email
-          <RegisterInput type="email" name="email" autoComplete="off" />
+          <RegisterInput type="email" name="email" autoComplete="off" required/>
         </RegisterLabel>
         <RegisterLabel>
           Password
-          <RegisterInput type="password" name="password" autoComplete="off" />
+          <RegisterInput type="password" name="password" autoComplete="off" required/>
         </RegisterLabel>
         <RegisterBtn type="submit">Register</RegisterBtn>
       </RegisterForm>
-    </div>
+    </FormWrapper>
   );
 };
 

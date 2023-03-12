@@ -4,6 +4,7 @@ import { FaPhoneSquare } from 'react-icons/fa';
 import { HomeParagrapher, JokeWrapper, JokeBtn } from './HomePage.styled';
 
 const HomePage = () => {
+
   const [posts, setPosts] = useState([]);
 
   const fetchPost = async () => {
@@ -18,8 +19,8 @@ const HomePage = () => {
   return (
     <>
       <HomeParagrapher>
-        Welcome to your phonebook app
-        <FaPhoneSquare style={{ marginLeft: '5px', color: 'green' }} />
+        Welcome to your phonebook
+        <FaPhoneSquare style={{ marginLeft: '5px', color: 'white' }} />
       </HomeParagrapher>
       <JokeWrapper>
         <HomeParagrapher>{posts.value}</HomeParagrapher>

@@ -8,9 +8,14 @@ import LogIn from 'pages/LogIn/Login';
 import Registration from 'pages/Registration/Registration';
 import Navigation from 'components/Navigation/Navigation';
 import { refreshUser } from 'redux/herokuappOperations';
+import Title from 'components/Title/Title';
+
 const App = () => {
+
   const isAuth = useSelector(state => state.auth.isAuth);
+
   const isRefreshing = useSelector(state => state.auth.isRefreshing);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,7 +27,7 @@ const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <b>Refreshing user...</b>
+    <Title title='Loading...'/>
   ) : (
     <>
       <Navigation />

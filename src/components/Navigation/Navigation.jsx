@@ -5,7 +5,9 @@ import { Outlet } from 'react-router-dom';
 import { Nav, NavItem } from './Navigation.styled';
 
 const Navigation = () => {
+
   const isAuth = useSelector(state => state.auth.isAuth);
+  
   return (
     <>
       <Nav>
@@ -24,7 +26,7 @@ const Navigation = () => {
                 Home
               </NavItem>
             </div>
-            <div style={{ display: 'flex', gap: '20px' }}>
+            <div style={{ display: 'flex', gap: '10px' }}>
               <NavItem to="/register"> Registration </NavItem>
               <NavItem to="/login"> Log In </NavItem>
             </div>
